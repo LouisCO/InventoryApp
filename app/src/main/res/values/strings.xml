@@ -1,0 +1,4 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">InventoryApp</string>
+    <string name="stock_info">The table contains <xliff:g example="2" id="cursor.getCount()">%d</xliff:g> products.\n\n</string>
+    </resources>
