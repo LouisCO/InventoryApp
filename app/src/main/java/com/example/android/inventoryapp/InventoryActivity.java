@@ -82,6 +82,7 @@ public class InventoryActivity extends AppCompatActivity {
                         cursor.getString(cursor.getColumnIndex(InventoryEntry.COLUMN_SUPPLIER_PHONE))
                 );
             }
+            cursor.close();
         }
 
     }
