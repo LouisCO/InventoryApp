@@ -100,9 +100,9 @@ public class InventoryActivity extends AppCompatActivity {
         long newRowId=stock.insert(InventoryEntry.TABLE_NAME, null, values);
 
         if (newRowId == -1) {
-            Toast.makeText(this, "Error with saving product", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.saving_error, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Product saved with row id: " +
+            Toast.makeText(this, getString(R.string.product_saved) +
                     newRowId, Toast.LENGTH_SHORT).show();
         }
 
