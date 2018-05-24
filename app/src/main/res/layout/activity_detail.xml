@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/sixteen_dp"
+    tools:context=".DetailActivity">
+
+    <EditText
+        android:id="@+id/edit_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/title"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/author"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_title" />
+
+    <EditText
+        android:id="@+id/edit_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:ems="10"
+        android:hint="@string/price"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_author" />
+
+    <EditText
+        android:id="@+id/edit_quantity"
+        android:layout_width="@dimen/qty_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/four_dp"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:ems="10"
+        android:hint="@string/quantity"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/plus_button"
+        app:layout_constraintStart_toEndOf="@+id/minus_button"
+        app:layout_constraintTop_toBottomOf="@+id/edit_price" />
+
+    <EditText
+        android:id="@+id/edit_supplier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:ems="10"
+        android:hint="@string/supplier_name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_quantity" />
+
+    <EditText
+        android:id="@+id/edit_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:ems="10"
+        android:hint="@string/supplier_phone"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_supplier" />
+
+    <ImageButton
+        android:id="@+id/minus_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/eight_dp"
+        android:layout_marginStart="@dimen/four_dp"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/subtract_one"
+        android:src="@drawable/ic_exposure_neg_1_white_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_quantity"
+        app:layout_constraintEnd_toStartOf="@+id/edit_quantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edit_quantity" />
+
+    <ImageButton
+        android:id="@+id/plus_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/eight_dp"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/add_one"
+        android:src="@drawable/ic_plus_one_white_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_quantity"
+        app:layout_constraintStart_toEndOf="@+id/edit_quantity"
+        app:layout_constraintTop_toTopOf="@+id/edit_quantity" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/order_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_phone_white_24dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_phone"
+        app:layout_constraintStart_toEndOf="@+id/edit_phone"
+        app:layout_constraintTop_toTopOf="@+id/edit_phone" />
+</android.support.constraint.ConstraintLayout>
