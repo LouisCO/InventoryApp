@@ -3,7 +3,10 @@
     <dimen name="sixteen_dp">16dp</dimen>
     <dimen name="eight_dp">8dp</dimen>
     <dimen name="four_dp">4dp</dimen>
-    <dimen name="qty_width">142dp</dimen>
+    <dimen name="price_width">125dp</dimen>
     <dimen name="zero_dp">0dp</dimen>
     <dimen name="two_dp">2dp</dimen>
+    <dimen name="three_dp">3dp</dimen>
+    <dimen name="twenty_four_dp">24dp</dimen>
+    <dimen name="qty_width">75dp</dimen>
 </resources>

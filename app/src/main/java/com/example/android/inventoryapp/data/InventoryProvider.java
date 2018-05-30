@@ -8,7 +8,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.example.android.inventoryapp.data.InventoryContract.InventoryEntry;
@@ -17,17 +16,14 @@ import com.example.android.inventoryapp.data.InventoryContract.InventoryEntry;
 public class InventoryProvider extends ContentProvider {
 
     public static final String LOG_TAG=InventoryProvider.class.getSimpleName();
-
     /**
      * URI matcher code for the content URI for the books table
      */
     private static final int BOOKS=100;
-
     /**
      * URI matcher code for the content URI for a single book in the table
      */
     private static final int BOOK_ID=101;
-
     private static final UriMatcher sUriMatcher=new UriMatcher(UriMatcher.NO_MATCH);
 
     // Static initializer. This is run the first time anything is called from this class.
@@ -44,10 +40,9 @@ public class InventoryProvider extends ContentProvider {
         return true;
     }
 
-    @Nullable
     @Override
-    public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection,
-                        @Nullable String[] selectionArgs, @Nullable String sortOrder) {
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection,
+                        String[] selectionArgs, String sortOrder) {
         SQLiteDatabase stock=dbHelper.getReadableDatabase();
 
         Cursor cursor;
@@ -73,7 +68,6 @@ public class InventoryProvider extends ContentProvider {
         return cursor;
     }
 
-    @Nullable
     @Override
     public String getType(@NonNull Uri uri) {
         final int match=sUriMatcher.match(uri);
@@ -87,9 +81,8 @@ public class InventoryProvider extends ContentProvider {
         }
     }
 
-    @Nullable
     @Override
-    public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
+    public Uri insert(@NonNull Uri uri, ContentValues values) {
         final int match=sUriMatcher.match(uri);
         switch (match) {
             case BOOKS:
@@ -147,7 +140,7 @@ public class InventoryProvider extends ContentProvider {
     }
 
     @Override
-    public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
+    public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
         SQLiteDatabase stock=dbHelper.getWritableDatabase();
         int rowsDeleted;
         final int match=sUriMatcher.match(uri);
@@ -171,8 +164,8 @@ public class InventoryProvider extends ContentProvider {
     }
 
     @Override
-    public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection,
-                      @Nullable String[] selectionArgs) {
+    public int update(@NonNull Uri uri, ContentValues values, String selection,
+                      String[] selectionArgs) {
         final int match=sUriMatcher.match(uri);
         switch (match) {
             case BOOKS:
@@ -180,9 +173,6 @@ public class InventoryProvider extends ContentProvider {
                     return updateBook(uri, values, selection, selectionArgs);
                 }
             case BOOK_ID:
-                // For the PET_ID code, extract out the ID from the URI,
-                // so we know which row to update. Selection will be "_id=?" and selection
-                // arguments will be a String array containing the actual ID.
                 selection=InventoryEntry._ID + "=?";
                 selectionArgs=new String[]{String.valueOf(ContentUris.parseId(uri))};
                 if (values != null) {

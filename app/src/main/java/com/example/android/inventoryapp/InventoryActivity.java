@@ -22,13 +22,13 @@ import butterknife.ButterKnife;
 public class InventoryActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int BOOK_LOADER=0;
-    InventoryCursorAdapter cursorAdapter;
     @BindView(R.id.fab)
     FloatingActionButton fab;
     @BindView(R.id.list)
     ListView listView;
     @BindView(R.id.empty_view)
     View emptyView;
+    private InventoryCursorAdapter cursorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,6 @@ public class InventoryActivity extends AppCompatActivity implements LoaderManage
         });
 
         listView.setEmptyView(emptyView);
-
         cursorAdapter=new InventoryCursorAdapter(this, null);
         listView.setAdapter(cursorAdapter);
 
@@ -53,9 +52,7 @@ public class InventoryActivity extends AppCompatActivity implements LoaderManage
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent intent=new Intent(InventoryActivity.this, DetailActivity.class);
-
                 Uri currentUri=ContentUris.withAppendedId(InventoryEntry.CONTENT_URI, id);
-
                 intent.setData(currentUri);
                 startActivity(intent);
             }

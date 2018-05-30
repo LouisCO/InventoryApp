@@ -8,12 +8,8 @@
         android:title="@string/save"
         app:showAsAction="always" />
     <item
-        android:id="@+id/order"
-        android:title="@string/order" />
-    <item
         android:id="@+id/delete"
-        android:title="@string/delete_item" />
-    <item
-        android:id="@+id/delete_all"
-        android:title="@string/delete_all" />
+        android:icon="@drawable/ic_delete_white_24dp"
+        android:title="@string/delete_item"
+        app:showAsAction="always" />
 </menu>
