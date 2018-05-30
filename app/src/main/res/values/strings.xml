@@ -1,6 +1,41 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">InventoryApp</string>
     <string name="stock_info">The table contains <xliff:g example="2" id="cursor.getCount()">%d</xliff:g> products.\n\n</string>
-    <string name="saving_error">Error with saving product</string>
-    <string name="product_saved">Product saved with row id:\t</string>
+    <string name="saving_error">Error with saving book</string>
+    <string name="product_saved">Book saved</string>
+    <string name="updating_error">Error with updating book</string>
+    <string name="product_updated">Book updated</string>
+    <string name="deleting_error">Error with deleting book</string>
+    <string name="product_deleted">Book deleted</string>
+    <string name="bookshelf">bookshelf</string>
+    <string name="empty_view_text">Add books to your inventory</string>
+    <string name="sale_button">sale button</string>
+    <string name="euro">€</string>
+    <string name="stock">In stock:</string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="supplier_name">Supplier\'s Name</string>
+    <string name="supplier_phone">Supplier\'s Phone No</string>
+    <string name="subtract_one">subtract one</string>
+    <string name="add_one">add one</string>
+    <string name="save">Save</string>
+    <string name="delete_item">Delete item</string>
+    <string name="author">Author</string>
+    <string name="out_of_stock">The book is out of stock</string>
+    <string name="add_book">Add a book</string>
+    <string name="edit_book">Edit book</string>
+    <string name="no_changes">No changes made to inventory</string>
+    <string name="title_error">Enter book\'s title</string>
+    <string name="author_error">Enter author</string>
+    <string name="supplier_error">Enter supplier\'s name</string>
+    <string name="phone_error">Enter supplier\'s phone</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep Editing</string>
+    <string name="delete_dialog_msg">Delete this product?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="negative_qty">The quantity cannot be negative</string>
+
 </resources>

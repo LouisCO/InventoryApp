@@ -16,17 +16,18 @@ public class InventoryDbHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase stock) {
 
         String SQL_CREATE_BOOKS_TABLE="CREATE TABLE " + InventoryEntry.TABLE_NAME + " ("
                 + InventoryEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + InventoryEntry.COLUMN_PRODUCT + " TEXT NOT NULL, "
-                + InventoryEntry.COLUMN_PRICE + " REAL NOT NULL DEFAULT 0.0, "
+                + InventoryEntry.COLUMN_AUTHOR + " TEXT NOT NULL, "
+                + InventoryEntry.COLUMN_PRICE + " DOUBLE NOT NULL DEFAULT 0.00, "
                 + InventoryEntry.COLUMN_QUANTITY + " INTEGER NOT NULL DEFAULT 0, "
                 + InventoryEntry.COLUMN_SUPPLIER_NAME + " TEXT NOT NULL, "
                 + InventoryEntry.COLUMN_SUPPLIER_PHONE + " TEXT NOT NULL);";
 
-        db.execSQL(SQL_CREATE_BOOKS_TABLE);
+        stock.execSQL(SQL_CREATE_BOOKS_TABLE);
     }
 
     @Override
