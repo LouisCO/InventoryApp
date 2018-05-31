@@ -1,6 +1,5 @@
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
     <string name="app_name">InventoryApp</string>
-    <string name="stock_info">The table contains <xliff:g example="2" id="cursor.getCount()">%d</xliff:g> products.\n\n</string>
     <string name="saving_error">Error with saving book</string>
     <string name="product_saved">Book saved</string>
     <string name="updating_error">Error with updating book</string>
@@ -33,9 +32,11 @@
     <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
     <string name="discard">Discard</string>
     <string name="keep_editing">Keep Editing</string>
-    <string name="delete_dialog_msg">Delete this product?</string>
+    <string name="delete_dialog_msg">Delete this book?</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="negative_qty">The quantity cannot be negative</string>
+    <string name="supplier_text">Supplier</string>
+    <string name="phone_text">Phone</string>
 
 </resources>
